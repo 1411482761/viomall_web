@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/jquery-3.3.1.min.js"></script>
+       
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../resource/vue.js"></script>
+       
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+            integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <form>
+        <!--公司信息-->
+        <div id="company" style="margin-left: 150px">
+            <h2>客户编号xxx的工厂信息登记表</h2>
+            <hr style="margin-right: 130px;margin-left: -20px;border:2px solid grey;"/>
+            <span>2018.11.12 由xx更新</span>
+            <div style="margin: 20px 20px 20px 0px">
+                <div style="float: left">
+                    <span style="text-decoration: underline;font-size: 40px;color: red;">4.5</span><span>&nbsp;分</span>
+                </div>
+                <div style="float: left">
+                    <table style="margin-left: 30px">
+                        <tr style="margin-bottom: 10px">
+                            <td align="right" style="padding-left: 30px;">
+                                <span style="color: red;">*</span>公司名称:
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" placeholder="一百字以内" style="margin-bottom: 10px">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;"><span style="color: red;">*</span>统一社会信用代码:
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px">
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <a id="cx" href="http://www.cods.org.cn/portal/publish/index.html" target="_blank">
+                                    <button name="check" type="button" class="btn btn-info"
+                                            style="margin-bottom: 10px;">查 询
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">实际拜访地址:</td>
+                            <td style="padding-left: 30px;"><input type="text" placeholder="一百字以内" class="form-control"
+                                                                   style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品分类1:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品分类2:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品分类3:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品1:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品2:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-left: 30px;">主营产品3:</td>
+                            <td style="padding-left: 30px;">
+                                <input type="text" class="form-control" style="margin-bottom: 10px"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="float: right;margin-right: 130px;padding-bottom: 20px">
+
+                    <div>
+                        <div style="float: left"><span>备注:</span></div>
+                        <div style="float: left;margin-left: 10px">
+                            <textarea class="form-control" rows="15" cols="25"
+                                      style="max-lines: 40;max-width: 220px"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div style="float: right;margin-right: 200px;">
+                     <textarea rows="19" cols="50" placeholder="请在此处添加备注信息..."></textarea>
+                 </div>-->
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <!--联系人-->
+        <div id="linkman" style="margin:60px 150px;">
+            <button type="button" class="btn btn-info" style="float: right;margin-bottom: 10px;" name="add">添加联系人
+            </button>
+            <div style="clear: both"></div>
+            <table id="evaluationList" class="table table-bordered" style="text-align: center">
+
+                <tr style="background-color: #199dd7">
+                    <th style="text-align: center">序号</th>
+                    <th style="text-align: center">主联系人</th>
+                    <th style="text-align: center">姓名</th>
+                    <th style="text-align: center">职位</th>
+                    <th style="text-align: center">电话</th>
+                    <th style="text-align: center">邮箱</th>
+                    <th style="text-align: center">QQ</th>
+                    <th style="text-align: center">微信</th>
+                    <th style="text-align: center">删除</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td><input type="checkbox">是</td>
+                    <td>张三</td>
+                    <td>分销商</td>
+                    <td>123123123</td>
+                    <td>123@123.com</td>
+                    <td>123123</td>
+                    <td>weixin123</td>
+                    <td>
+                        <span><i class="fas fa-user-minus"></i></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="checkbox">是</td>
+                    <td>李四</td>
+                    <td>分销商</td>
+                    <td>123123123</td>
+                    <td>456@123.com</td>
+                    <td>123456</td>
+                    <td>weixin456</td>
+                    <td>
+                        <span><i class="fas fa-user-minus"></i></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--产品信息-->
+        <div id="product" style="margin-left: 150px">
+            <h3 style="margin-bottom: -10px;">产品信息</h3>
+            <hr style="margin-right: 130px;margin-left: -20px;border:2px solid grey;">
+            <div style="float: left; ">
+                <table>
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">产品市场规模:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">月均$300万以上</option>
+                                <option value="4">月均$200-$300万</option>
+                                <option value="3">月均$100-$200万</option>
+                                <option value="2">月均$50-$100万</option>
+                                <option value="1">月均$50万以下</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">产品市场均价:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">&gt;$100</option>
+                                <option value="4">$50-$100</option>
+                                <option value="3">$30-$50</option>
+                                <option value="2">$10-$30</option>
+                                <option value="1">$10以下</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">市场畅销SKU数量:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">&gt;500</option>
+                                <option value="4">300-500</option>
+                                <option value="3">100-300</option>
+                                <option value="2">50-100</option>
+                                <option value="1">&lt;50</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">主要竞争卖家:</td>
+                        <td style="padding-left: 30px;">
+                            <textarea type="text" class="form-control" style="margin-bottom: 10px"></textarea></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">主要产品属性:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="AM">AM</option>
+                                <option value="OE">OE</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float: right;margin-right: 200px;padding-bottom: 20px">
+                <div>
+                    <div style="float: left">主要市场产品:</div>
+                    <div style="float: left;margin-left: 10px;margin-bottom: 40px;">
+                        <textarea class="form-control" rows="4" cols="25"></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <div style="float: left">必要配套产品:</div>
+                    <div style="float: left;margin-left: 10px;">
+                        <textarea class="form-control" rows="4" cols="25"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <!--位置信息-->
+        <div id="area" style="margin-left: 150px">
+            <h3 style="margin-bottom: -10px;">位置信息</h3>
+            <hr style="margin-right: 130px;margin-left: -20px;border:2px solid grey;">
+            <div style="float: left;">
+                <table>
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">主要工厂分布地区:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">长三角</option>
+                                <option value="4">珠三角</option>
+                                <option value="3">其他区域（中国大陆）</option>
+                                <option value="2">中国港澳台地区</option>
+                                <option value="1">海外</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">工厂SKU主要市场:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">北美</option>
+                                <option value="4">欧洲</option>
+                                <option value="3">澳洲</option>
+                                <option value="2">日本</option>
+                                <option value="1">其他</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">工厂SKU数量:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">&gt;500</option>
+                                <option value="4">300-500</option>
+                                <option value="3">100-300</option>
+                                <option value="2">50-100</option>
+                                <option value="1">&lt;50</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">工厂同行排名:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="TOP3">TOP3</option>
+                                <option value="3-10名">3-10名</option>
+                                <option value="10名以后">10名以后</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float: right;margin-right: 200px;;padding-bottom: 20px">
+                <div>
+                    <div style="float: left">同类产品工厂前五名:</div>
+                    <div style="float: left;margin-left: 10px;margin-bottom: 40px;">
+                        <textarea class="form-control" rows="7" cols="25"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <!--工厂信息-->
+        <div id="factory" style="margin-left: 150px">
+            <h3 style="margin-bottom: -10px;">工厂信息</h3>
+            <hr style="margin-right: 130px;margin-left: -20px;border:2px solid grey;">
+            <div style="float: left ;margin-left: -20px">
+                <table style="margin-left: -20px">
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">工厂人数:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">&gt;1000人</option>
+                                <option value="4">200-1000人</option>
+                                <option value="3">100-200人</option>
+                                <option value="2">50-100人</option>
+                                <option value="1">50人以下</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">工厂年出口额:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">&gt;$10M</option>
+                                <option value="4">$5M-$10M</option>
+                                <option value="3">$3M-$5M</option>
+                                <option value="2">$1M-$3M</option>
+                                <option value="1">$1M以下</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">工厂产能(PCS):</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">月20K以上</option>
+                                <option value="4">月10K-20K</option>
+                                <option value="3">月5K-10K</option>
+                                <option value="2">月1K-5K</option>
+                                <option value="1">月1K以下</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">与美国市场适配SKU数量:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">500以上</option>
+                                <option value="4">300-500</option>
+                                <option value="3">100-300</option>
+                                <option value="2">50-100</option>
+                                <option value="1">50以下</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">畅销车型匹配:</td>
+                        <td style="padding-left: 30px;">
+                            <textarea type="text" class="form-control" style="margin-bottom: 10px"></textarea>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div style="float: right;margin-right: 170px;padding-bottom: 20px">
+
+                <table style="margin-left: 30px">
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 10px;">是否已在美国线上市场销售:</td>
+                        <td style="padding-left: 10px;">
+                            <input type="text" class="form-control" style="margin-bottom: 10px;"
+                                   placeholder="ebay/Amazon/Wish/...">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">美国线上销售情况</td>
+                        <td style="padding-left: 10px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <option value=""></option>
+                                <option value="5">月$1K以下</option>
+                                <option value="4">月$1K-$10K</option>
+                                <option value="3">月$10K-$50K</option>
+                                <option value="2">月$50K-$100K</option>
+                                <option value="1">月$100K-$500K</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">海外仓使用状况:</td>
+                        <td style="padding-left: 10px;">
+                            <input type="text" id="ti" class="form-control" style="margin-bottom: 10px;"
+                                   placeholder="递四方/出口易/中邮/四海邮/...">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">物流费用所占比例:</td>
+                        <td style="padding-left: 10px;">
+                            <select class="form-control " style="margin-bottom: 10px;">
+                                <option value=""></option>
+                                <option value="10%以下">10%以下</option>
+                                <option value="10%-20%">10%-20%</option>
+                                <option value="20%-30%">20%-30%</option>
+                                <option value="30%-40%">30%-40%</option>
+                                <option value="40%以上">40%以上</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">进出口特别资料:</td>
+                        <td style="padding-left: 10px;">
+                    <textarea type="text" class="form-control" style="margin-bottom: 10px"
+                              placeholder="DOT/商检/反垄断及反倾销/电池认证/..."></textarea>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <!--现场照片-->
+        <div id="photo" style="margin-left: 150px">
+            <h3 style="margin-bottom: -10px;display: inline;">现场照片</h3>
+            <span style="color: red">(不超过20张,jpg/jpeg格式,600*800像素以上)</span>
+            <button type="button" class="btn btn-info"
+                    style="float: right;margin-right: 200px;margin-left: 20px;padding: 6px 20px" name="del">删 除
+            </button>
+            <button type="button" class="btn btn-info" style="float: right;padding: 6px 20px" name="up">上 传</button>
+            <div style="clear: both"></div>
+            <hr style="margin-right: 130px;margin-left: -20px;margin-top: 10px;border:2px solid grey;">
+
+        </div>
+        <!--拜访记录-->
+        <div id="visit" style="margin-left: 150px">
+            <h3 style="margin-bottom: -10px;">拜访记录</h3>
+            <hr style="margin-right: 130px;margin-left: -20px;border:2px solid grey;">
+            <div style="float: left ;margin-left: 20px;">
+                <table style="margin-left: -10px">
+                    <tr style="margin-bottom: 10px">
+                        <td align="right" style="padding-left: 30px;">洽谈内容:</td>
+                        <td style="padding-left: 30px;">
+                            <textarea class="form-control" style="margin-bottom: 10px"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">洽谈结果:</td>
+                        <td style="padding-left: 30px;">
+                            <textarea class="form-control" style="margin-bottom: 10px"></textarea>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">本次拜访时间:</td>
+                        <td style="padding-left: 30px;">
+                            <select type="text" class="form-control" style="margin-bottom: 10px">
+                                <!---->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-left: 30px;">预计可拜访时间:</td>
+                        <td style="padding-left: 30px;">
+                            <datepicker class="form-control span3" placeholder="开始日期" name="visitStartDate"
+                                        v-model="visitStartDate"></datepicker>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float: right;margin-right: 200px;padding-bottom: 20px">
+
+                <div style="margin-left: 30px">
+                    <div style="float: left"><span>备注:</span></div>
+                    <div style="float: left;margin-left: 20px">
+                        <textarea class="form-control" rows="10" cols="30"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div style="float: right;margin-right:110px; padding: 50px;">
+            <button type="reset" class="btn btn-primary" style="padding: 6px 20px;margin-right: 20px;" name="reset">重置
+            </button>
+            <button type="button" class="btn btn-primary" style="padding: 6px 20px;margin-right: 20px;" name="save">保存
+            </button>
+            <button type="submit" class="btn btn-primary" style="padding: 6px 20px;margin-right: 20px;" name="sub">提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        $("#test").change(function () {
+            if (this.value == "other") {
+                $("#ti").removeAttr("style");
+            }
+
+        })
+    })
+</script>
+</body>
+</html>
