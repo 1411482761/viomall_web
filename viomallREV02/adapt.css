@@ -1,0 +1,90 @@
+@media screen and (max-width: 768px){
+    .h-navbar{
+       width: 100%;margin-bottom: 0px;height: 3%;
+        min-height: 35px;
+    }
+    .title-intro{
+        font-size: 6px;
+    }
+    .p-h-l2-title{
+        font-size: 14px;
+    }
+    .h-title-logo{
+       height: 25px;margin-top: 5px;
+    }
+    .h-l2-logo{
+        margin-top: 170%;
+    }
+    .title {
+        font-size: 5px;
+        line-height: 6px;
+        bottom: 4px;
+    }
+    .title-user-b{
+        margin-top: -10px;
+    }
+    .h-top{
+        margin-top: 5%;
+    }
+    .h-l2-body{
+        margin-left: 20px;
+    }
+    .h-title-4{
+        font-weight: 600;
+        font-size: 2em;
+    }
+    .h-pic-6{
+        margin-top: 20px;
+    }
+    .review-block{
+        margin: 20px 10px 10px 20px;height: 250px;line-height: 25px;
+    }
+    .h-l5-right{
+        margin-top: 40px;
+    }
+    .footer-block{
+        height: 500px;
+    }
+    .title-intro-out{
+        margin-top: 5px;
+    }
+    .title-user-a{
+        font-size: 8px;
+    }
+    .drop-menu{
+        margin-left: -100px;
+    }
+}
+@media (min-width: 768px) {
+    .h-navbar{
+       width: 100%;margin-bottom: 0px;height: 6%;
+    }
+    .title-intro{
+        font-family: 'Microsoft YaHei', '宋体', 'Segoe UI', 'Lucida Grande', Helvetica, Arial, sans-serif, FreeSans, Arimo;
+
+    }
+    .h-title-logo{
+       height: 45px;margin-top: 5px;
+    }
+    .h-l2-logo{
+        margin-top: 80%;
+    }
+    .title-intro-out{
+        margin-top: 20px;
+    }
+    .title {
+        font-size: 1em;
+    }
+    .h-top{
+        margin-top: 2%;
+    }
+    .h-title-4{
+        font-weight: 600;font-size: 3em;
+    }
+    .review-block{
+        margin: 20px 10px 10px 20px;height: 110px;line-height: 25px;
+    }
+    .footer-block{
+        height: 450px;
+    }
+}
