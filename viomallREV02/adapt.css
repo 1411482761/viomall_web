@@ -54,6 +54,21 @@
     .drop-menu{
         margin-left: -100px;
     }
+    .title-underline{
+        border-bottom: 1px solid #006EFF;
+    }
+    .v-b1-left{
+        margin-top: 30px;
+    }
+    .vm-pic-right{
+        width: 350px;
+    }
+    .vm-pic-left{
+        width: 300px;
+    }
+    .vm-pic3{
+        margin-top: 0px;
+    }
 }
 @media (min-width: 768px) {
     .h-navbar{
@@ -86,5 +101,14 @@
     }
     .footer-block{
         height: 450px;
+    }
+    .title-big{
+        border-bottom: 2px solid #006EFF;
+    }
+    .v-b1-left{
+        margin-top: 100px;
+    }
+    .vm-pic3{
+        margin-top: -50px;
     }
 }

@@ -11,10 +11,6 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="adapt.css">
     <style>
-        .title {
-            font-size: 1em;
-        }
-
         html {
             overflow-x: hidden;
         }
@@ -26,14 +22,13 @@
     </style>
 </head>
 <body>
-<nav class="navbar  navbar-default navbar-fixed-top" role="navigation"
-     style="width: 100%;margin-bottom: 0px;height: 6%;">
+<nav class="navbar  navbar-default navbar-fixed-top h-navbar" role="navigation">
     <div class="container text-center" style="width: 100%;margin-top: 0px">
         <div class="col-md-1 col-xs-0"></div>
         <div class="col-md-4 col-xs-5 text-left">
-            <div class="col-md-3 col-xs-4"><a href="#" @click="changeTitle(1)"><img src="images/common/logo.png" style="height: 45px;margin-top: 5px;"/></a></div>
+            <div class="col-md-3 col-xs-4"><a href="index.html" ><img src="images/common/logo.png" class="h-title-logo" /></a></div>
             <div class="col-md-1 col-xs-0"></div>
-            <div class="col-md-7 col-xs-8" style="margin-top: 20px">
+            <div class="col-md-7 col-xs-8 title-intro-out" >
                 <div class="col-md-12 col-xs-12"><span  class="title-intro" >
             一家以IT为基础,数据驱动的跨境供应链服务商</span></div>
             </div>
@@ -41,27 +36,24 @@
         <div class="col-md-0"></div>
         <div class="col-md-7 col-xs-7">
             <a href="index.html">
-                <div class="col-md-2 col-xs-2 text-center "><span class="title title-1 navbar-brand text-right"
-                                                                  @click="changeTitle(1)" ><span
-                        style="margin-left: 0px">首页</span></span></div>
+                <div class="col-md-2 col-xs-2 text-center "><div class="title  navbar-brand text-right"><div >首页</div></div></div>
             </a>
             <a href="vioMall.html" class="">
-                <div class="col-md-3 col-xs-3 text-center"><span class="title title-2 navbar-brand" @click="changeTitle(2)" style="border-bottom: 2px solid #006EFF;">VioMall微茂分销</span>
-                </div>
+                <div class="col-md-3 col-xs-3 text-center"><a href="vioMall.html"> <span class="title title-big title-2 navbar-brand" ><div class="title-underline">VioMall微茂分销</div></span>
+                </a>  </div>
             </a>
             <a href="vioLogistic.html">
-                <div class="col-md-3 col-xs-3 text-center"><span class="title title-3 navbar-brand" @click="changeTitle(3)">VioLogistic集仓</span>
+                <div class="col-md-3 col-xs-3 text-center"><span class="title title-3 navbar-brand">VioLogistic集仓</span>
                 </div>
             </a>
             <a href="vioHi.html">
-                <div class="col-md-2 col-xs-2 text-center"><span class="title title-4 navbar-brand"
+                <div class="col-md-2 col-xs-3 text-center"><span class="title title-4 navbar-brand"
                                                                  @click="changeTitle(4)">VioHi市场先知</span></div>
             </a>
             <a href="#" class="dropdown">
-                <div class="col-md-2  col-xs-2 text-right">
-                    <a class="dropdown-toggle navbar-brand  " style="font-size: 14px" data-toggle="dropdown" href="#"><span class= "glyphicon glyphicon-user"></span> <b
-                            class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                <div class="col-md-2  col-xs-1 text-right title-user-b">
+                    <a class="dropdown-toggle navbar-brand  title-user-a " data-toggle="dropdown" href="#"><span class= "glyphicon  glyphicon-user title-user" ></span> </a>
+                    <ul class="dropdown-menu drop-menu" >
                              
                         <li><a href="http://dms.viomall.com/userManager/loginPage.do">VIOMALL分销中心 </a></li>
                              
@@ -78,10 +70,10 @@
     </div>
 
 </nav>
-<div v-if="current==2">
+<div >
     <div style="height: 400px;background-image: url('images/home/BG-S01.jpg');width: 100%;background-repeat: no-repeat;z-index: 2;margin-top: 76px;">
         <div class="col-md-1 col-xs-1"></div>
-        <div class="col-md-5 col-xs-5" style="margin-top: 100px;">
+        <div class="col-md-5 col-xs-7" style="margin-top: 100px;">
             <div class="col-md-12 col-xs-12 text-left h1">VioMall 微茂分销</div>
             <div class="col-md-12 col-xs-12 text-left " style="line-height: 25px;letter-spacing: 1px">
                 一站式分销，跨平台管理，只需要登录微茂分销系统，就可同时管理多渠道业务，集成强大工作流。
@@ -90,12 +82,12 @@
 
     </div>
     <div class="row" style="margin-top: 50px;height: 630px">
-        <div class="col-md-2 col-xs-2"></div>
-        <div class="col-md-4 col-xs-4 text-left" style="margin-top: 100px">
-            <div class="col-md-9 h2 col-xs-9 " style="line-height: 40px;">
+        <div class="col-md-2 col-xs-0"></div>
+        <div class="col-md-4 col-xs-6 text-left v-b1-left">
+            <div class="col-md-9 h2 col-xs-11 " style="line-height: 40px;">
                 利用 VioMall 微茂分销，<br>高效拓展销售业务
             </div>
-            <div class="col-md-9 col-xs-9" style="margin-top: 30px">
+            <div class="col-md-9 col-xs-11" style="margin-top: 30px">
                 <span style="line-height: 25px">
                     VIOMALL帮助企业建立海外销售渠道，开展销售业务，不但能建立海外直销，更能建立分销体系。从数据分析、选品开始，到全段供应链物流支持，再到分销渠道建设、销售培训，最后是在资金结算，在其中各个环节提供服务，为客户创造价值。
                 </span>
@@ -107,9 +99,9 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-1 col-xs-1"></div>
-        <div class="col-md-3 col-xs-3" style="margin-top: 30px">
-            <img src="images/home/xlb.jpg"/>
+        <div class="col-md-1 col-xs-0"></div>
+        <div class="col-md-3 col-xs-6" style="margin-top: 30px">
+            <img src="images/home/xlb.jpg" class="vm-pic-right"/>
         </div>
         <!--   <div class="col-md-1"></div>
            <div class="col-md-4 text-center" style="margin-top: 50px">
@@ -154,12 +146,12 @@
     </div>
     <div class="row" style="background-color: #f0f0f0; width: 100%;height: 630px">
         <div class="row" style="margin-top: 150px">
-            <div class="col-md-1 col-xs-1"></div>
+            <div class="col-md-1 col-xs-0"></div>
             <div class="col-md-5 col-xs-5 text-center">
-                <img src="images/temp/vm-line3.jpg"/>
+                <img src="images/temp/vm-line3.jpg" class="vm-pic-left"/>
             </div>
             <div class="col-md-1 col-xs-1"></div>
-            <div class="col-md-3 col-xs-3" style="margin-top: -20px">
+            <div class="col-md-3 col-xs-6" style="margin-top: -20px">
                 <div class="text-left h2 col-md-12 col-xs-12">
                     在 VioMall 中，招募专业分销商，并有效管理
                 </div>
@@ -178,8 +170,8 @@
     </div>
     <div class="row" style="height: 630px">
         <div class="row" style="margin-top: 150px;">
-            <div class="col-md-2 col-xs-2"></div>
-            <div class="col-md-3 col-xs-3" style="">
+            <div class="col-md-2 col-xs-0"></div>
+            <div class="col-md-3 col-xs-6" style="">
                 <div class="text-left h2 col-md-12 col-xs-12">
                     随时随地使用 VioMall 微茂，已为你整合各大销售平台工作流
                 </div>
@@ -194,9 +186,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-2 col-xs-2"></div>
-            <div class="col-md-3 col-xs-3" style="margin-top: -50px">
-                <img src="images/temp/vm-line4.jpg"/>
+            <div class="col-md-2 col-xs-0"></div>
+            <div class="col-md-3 col-xs-6 vm-pic3" >
+                <img src="images/temp/vm-line4.jpg" class="vm-pic-right"/>
             </div>
         </div>
     </div>
@@ -281,7 +273,7 @@
     </div>
 </div>
 <div class="row" style="margin-top: 30px">
-    <div style="width: 100%;height: 450px;background-color: #003b8e;position: relative" class="col-md-12 col-xs-12 text-center">
+    <div style="width: 100%;background-color: #003b8e;position: relative" class="col-md-12 col-xs-12 text-center footer-block">
         <div style="margin-top: 50px">
             <div class="col-md-1 col-xs-1"></div>
             <div class="col-md-4 col-xs-4 text-left">

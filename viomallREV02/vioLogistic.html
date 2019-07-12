@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="adapt.css">
     <style>
-        .title {
-            font-size: 1em;
-        }
 
         html {
             overflow-x: hidden;
@@ -26,41 +23,38 @@
     </style>
 </head>
 <body>
-<nav class="navbar  navbar-default navbar-fixed-top" role="navigation"
-     style="width: 100%;margin-bottom: 0px;height: 6%;">
+<nav class="navbar  navbar-default navbar-fixed-top h-navbar" role="navigation">
     <div class="container text-center" style="width: 100%;margin-top: 0px">
         <div class="col-md-1 col-xs-0"></div>
         <div class="col-md-4 col-xs-5 text-left">
-            <div class="col-md-3 col-xs-4"><a href="#" @click="changeTitle(1)"><img src="images/common/logo.png" style="height: 45px;margin-top: 5px;"/></a></div>
+            <div class="col-md-3 col-xs-4"><a href="index.html" ><img src="images/common/logo.png" class="h-title-logo" /></a></div>
             <div class="col-md-1 col-xs-0"></div>
-            <div class="col-md-7 col-xs-8" style="margin-top: 20px">
-                <div class="col-md-12 col-xs-12"><span  class="test" >
+            <div class="col-md-7 col-xs-8 title-intro-out" >
+                <div class="col-md-12 col-xs-12"><span  class="title-intro" >
             一家以IT为基础,数据驱动的跨境供应链服务商</span></div>
             </div>
         </div>
         <div class="col-md-0"></div>
         <div class="col-md-7 col-xs-7">
             <a href="index.html">
-                <div class="col-md-2 col-xs-2 text-center "><span class="title title-1 navbar-brand text-right"><span
-                        style="margin-left: 0px">首页</span></span></div>
+                <div class="col-md-2 col-xs-2 text-center "><div class="title navbar-brand text-right"><div >首页</div></div></div>
             </a>
             <a href="vioMall.html" class="">
-                <div class="col-md-3 col-xs-3 text-center"><span class="title title-2 navbar-brand" @click="changeTitle(2)">VioMall微茂分销</span>
-                </div>
+                <div class="col-md-3 col-xs-3 text-center"><a href="vioMall.html"> <span class="title title-2 navbar-brand" >VioMall微茂分销</span>
+                </a>  </div>
             </a>
             <a href="vioLogistic.html">
-                <div class="col-md-3 col-xs-3 text-center"><span class="title title-3 navbar-brand" @click="changeTitle(3)" style="border-bottom: 2px solid #006EFF;">VioLogistic集仓</span>
+                <div class="col-md-3 col-xs-3 text-center"><span class="title title-3 navbar-brand title-big"><div class="title-underline">VioLogistic集仓</div></span>
                 </div>
             </a>
             <a href="vioHi.html">
-                <div class="col-md-2 col-xs-2 text-center"><span class="title title-4 navbar-brand"
+                <div class="col-md-2 col-xs-3 text-center"><span class="title title-4 navbar-brand"
                                                                  @click="changeTitle(4)">VioHi市场先知</span></div>
             </a>
             <a href="#" class="dropdown">
-                <div class="col-md-2  col-xs-2 text-right">
-                    <a class="dropdown-toggle navbar-brand  " style="font-size: 14px" data-toggle="dropdown" href="#"><span class= "glyphicon glyphicon-user"></span> <b
-                            class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                <div class="col-md-2  col-xs-1 text-right title-user-b">
+                    <a class="dropdown-toggle navbar-brand  title-user-a " data-toggle="dropdown" href="#"><span class= "glyphicon  glyphicon-user title-user" ></span> </a>
+                    <ul class="dropdown-menu drop-menu" >
                              
                         <li><a href="http://dms.viomall.com/userManager/loginPage.do">VIOMALL分销中心 </a></li>
                              
@@ -210,7 +204,7 @@
     </div>
 </div>
 <div class="row" style="margin-top: 30px">
-    <div style="width: 100%;height: 450px;background-color: #003b8e;position: relative" class="col-md-12 col-xs-12 text-center">
+    <div style="width: 100%;background-color: #003b8e;position: relative" class="col-md-12 col-xs-12 text-center footer-block">
         <div style="margin-top: 50px">
             <div class="col-md-1 col-xs-1"></div>
             <div class="col-md-4 col-xs-4 text-left">
