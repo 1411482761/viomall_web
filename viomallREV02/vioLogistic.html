@@ -9,21 +9,22 @@
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="./scripts/vue.js"></script>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="adapt.css">
+    <!--<link rel="stylesheet" href="adapt.css">-->
+        <link rel="stylesheet" href="viologistic.css">
     <style>
 
         html {
             overflow-x: hidden;
         }
 
-        .row {
+    /*    .row {
             padding: 0px;
             margin: 0px;
-        }
+        }*/
     </style>
 </head>
 <body>
-<nav class="navbar  navbar-default navbar-fixed-top h-navbar" role="navigation">
+<nav class="navbar  navbar-default navbar-fixed-top h-navbar pc-nav" role="navigation">
     <div class="container text-center" style="width: 100%;margin-top: 0px">
         <div class="col-md-1 col-xs-0"></div>
         <div class="col-md-4 col-xs-5 text-left">
@@ -71,20 +72,68 @@
     </div>
 
 </nav>
-<div v-show="current==3">
-    <div style="height: 400px;background-image: url('images/home/BG-S02.jpg');background-repeat: no-repeat;width: 100%;z-index: 2;margin-top: 76px;">
+<nav class="navbar  navbar-default navbar-fixed-top h-navbar ip-nav" role="navigation">
+    <div class="container text-center" style="width: 100%;margin-top: 0px">
+        <div class="col-md-1 col-xs-0"></div>
+        <div class="col-md-4 col-xs-5 text-left">
+            <div class="col-md-3 col-xs-4"><a href="index.html" ><img src="images/common/logo.png" class="h-title-logo" /></a></div>
+            <div class="col-md-1 col-xs-0"></div>
+            <div class="col-md-7 col-xs-8 title-intro-out" >
+                <div class="col-md-12 col-xs-12"><span  class="title-intro" >
+            一家以IT为基础,数据驱动的跨境供应链服务商</span></div>
+            </div>
+        </div>
+        <div class="col-md-0"></div>
+        <div class="col-md-7 col-xs-7">
+            <a href="index.html">
+                <div class="col-md-2 col-xs-2 text-center "><div class="title navbar-brand text-right"><div >首页</div></div></div>
+            </a>
+            <a href="vioMall.html" class="">
+                <div class="col-md-3 col-xs-3 text-center"><a href="vioMall.html"> <span class="title title-2 navbar-brand" >微茂分销</span>
+                </a>  </div>
+            </a>
+            <a href="vioLogistic.html">
+                <div class="col-md-3 col-xs-2 text-center"><span class="title title-3 navbar-brand title-big"><div class="title-underline">集仓</div></span>
+                </div>
+            </a>
+            <a href="vioHi.html">
+                <div class="col-md-2 col-xs-3 text-center"><span class="title title-4 navbar-brand"
+                                                                 @click="changeTitle(4)">市场先知</span></div>
+            </a>
+            <a href="#" class="dropdown">
+                <div class="col-md-2  col-xs-2 text-right title-user-b">
+                    <a class="dropdown-toggle navbar-brand  title-user-a " data-toggle="dropdown" href="#"><span class= "glyphicon  glyphicon-user title-user" ></span> </a>
+                    <ul class="dropdown-menu drop-menu" >
+                             
+                        <li><a href="http://dms.viomall.com/userManager/loginPage.do">VIOMALL分销中心 </a></li>
+                             
+                        <li><a href="http://desk.viomall.com/userManager/loginPage.do">VIOMALL云登录</a></li>
+                             
+                        <li><a href="http://www.viologistic.com/user/login.do">VIOMALL供应链</a></li>
+                             
+                        <li><a href="http://www.viomallpay.com/login.do">VIOMALL资金管理</a></li>
+                           
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</nav>
+<div >
+    <div style="height: 400px;background-image: url('images/home/BG-S02.jpg');background-repeat: no-repeat;width: 100%;z-index: 2;" class="first-block">
         <div class="col-md-1 col-xs-1"></div>
-        <div class="col-md-5 col-xs-5" style="margin-top: 100px;">
+        <div class="col-md-5 col-xs-7 block-title" >
             <div class="col-md-12 col-xs-12 text-left h1">VioLogistic 集仓</div>
             <div class="col-md-12 col-xs-12 text-left " style="line-height: 25px;letter-spacing: 1px">
                 大数据智能分仓管理，通过资源优化，大幅降低物流费用，为业务占得先机。
             </div>
         </div>
     </div>
-    <div class="row" style="height: 630px;margin-top: 50px;">
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-2 col-xs-2"></div>
-            <div class="col-md-4 col-xs-4" style="margin-top: 50px;" >
+    <div class="row row-block" style="background-color: white" >
+        <div class="row row-top-1" >
+            <div class="col-md-2 col-xs-1"></div>
+            <div class="col-md-4 col-xs-5" style="margin-top: 50px;" >
                 <div class="text-left h2 col-md-12 col-xs-12" >
                     集仓 整合超过15个海外仓库资源，提供分仓与快递服务
                 </div>
@@ -94,29 +143,29 @@
                         </span>
                 </div>
                 <div class="text-left col-md-12 col-xs-12" style="margin-top: 30px">
-                    <a style="text-decoration:none;" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5">
+                    <a style="text-decoration:none;" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5" class="vl-btn">
                         <button style="background-color: transparent;border-radius: 10px;border: 1px solid #2970fc;padding: 10px">
                             <span style="color: #2970fc;font-size: 14px">免费申请</span></button>
                     </a>
-                    <a style="margin-left: 40px;color: blue" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
+                    <a class="a-a" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
                 </div>
             </div>
-            <div class="col-md-1 col-xs-1"></div>
-            <div class="col-md-3 col-xs-3">
-                <img src="images/temp/vm-line4.jpg"/>
+            <div class="col-md-1 col-xs-0"></div>
+            <div class="col-md-3 col-xs-6 " >
+                <img src="images/temp/vm-line4.jpg" class="vl-pic-right" />
             </div>
         </div>
     </div>
-    <div class="row" style="background-color: #f0f0f0; width: 100%;height: 630px">
-        <div class="row" style="margin-top: 150px">
-            <div class="col-md-2 col-xs-2"></div>
-            <div class="col-md-4 col-xs-4">
+    <div class="row row-block" >
+        <div class="row row-block-row" >
+            <div class="col-md-2 col-xs-0"></div>
+            <div class="col-md-4 col-xs-6">
                 <div class="col-md-12 col-xs-12 text-left" style="margin-top: 20px;">
-                    <img src="images/temp/jc-line-2.jpg"/>
+                    <img src="images/temp/jc-line-2.jpg" class="vl-pic-left"/>
                 </div>
             </div>
-            <div class="col-md-1 col-xs-1"></div>
-            <div class="col-md-3 col-xs-3" >
+            <div class="col-md-1 col-xs-0"></div>
+            <div class="col-md-3 col-xs-6" >
                 <div class="h2 text-left col-md-12 col-xs-12">
                     采用 集仓 一口价报价方式，全美享受一个价格，无附加收费
                 </div>
@@ -126,20 +175,20 @@
                         </span>
                 </div>
                 <div style="margin-top: 40px" class="col-md-12 col-xs-12 text-left">
-                    <a style="text-decoration:none;" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5">
+                    <a  href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5" class="vl-btn">
                         <button style="background-color: transparent;border-radius: 10px;border: 1px solid #2970fc;padding: 10px">
                             <span style="color: #2970fc;font-size: 14px">免费申请</span></button>
                     </a>
-                    <a style="margin-left: 40px;color: blue" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
+                    <a class="a-a"  href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
                 </div>
             </div>
 
         </div>
     </div>
-    <div class="row" style="background-color: #FFFFFF; width: 100%;height: 630px">
-        <div class="row" style="margin-top: 150px">
-            <div class="col-md-2 col-xs-2"></div>
-            <div class="col-md-4 col-xs-4">
+    <div class="row row-block" style="background-color: white">
+        <div class="row row-block-row"  >
+            <div class="col-md-2 col-xs-1"></div>
+            <div class="col-md-4 col-xs-5">
                 <div class="col-md-12 col-xs-12 text-left h2">
                     惊喜价格，源自 集仓 大数据智能系统精细计算
                 </div>
@@ -149,29 +198,29 @@
                     </span>
                 </div>
                 <div style="margin-top: 40px" class="col-md-12 col-xs-12 text-left">
-                    <a style="text-decoration:none;" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5">
+                    <a style="text-decoration:none;" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5" class="vl-btn">
                         <button style="background-color: transparent;border-radius: 10px;border: 1px solid #2970fc;padding: 10px">
                             <span style="color: #2970fc;font-size: 14px">免费申请</span></button>
                     </a>
-                    <a style="margin-left: 40px;color: blue" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
+                    <a class="a-a" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
                 </div>
             </div>
-            <div class="col-md-1 col-xs-1"></div>
-            <div class="col-md-4 col-xs-4 text-left" style="margin-top: -20px;">
-                <img src="images/temp/jc-line-3.jpg"/>
+            <div class="col-md-1 col-xs-0"></div>
+            <div class="col-md-4 col-xs-6 text-left " style="margin-top: -20px;" >
+                <img src="images/temp/jc-line-3.jpg" class="vl-pic-right"/>
             </div>
         </div>
     </div>
-    <div class="row" style="background-color: #f0f0f0; width: 100%;height: 630px">
-        <div class="row" style="margin-top: 150px">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <div class="col-md-12 text-left" >
-                    <img src="images/temp/jc-line-4.jpg"/>
+    <div class="row row-block">
+        <div class="row row-block-row" >
+            <div class="col-md-2 col-xs-0"></div>
+            <div class="col-md-4 col-xs-6">
+                <div class="col-md-12 col-xs-12 text-left" >
+                    <img src="images/temp/jc-line-4.jpg" class="vl-pic-left"/>
                 </div>
             </div>
-            <div class="col-md-1 col-xs-1"></div>
-            <div class="col-md-3 col-xs-3"  >
+            <div class="col-md-1 col-xs-0"></div>
+            <div class="col-md-3 col-xs-6"  >
                 <div class="h2 text-left col-md-12 col-xs-12">
                     在 集仓，一切化繁为简,简单输入就可以制定最有方案
                 </div>
@@ -181,11 +230,11 @@
                         </span>
                 </div>
                 <div style="margin-top: 40px" class="col-md-12 text-left col-xs-12">
-                    <a style="text-decoration:none;">
+                    <a style="text-decoration:none;" class="vl-btn">
                         <button style="background-color: transparent;border-radius: 10px;border: 1px solid #2970fc;padding: 10px" href="http://www.viologistic.com/supplyRegister/registerPage.do?type=5">
                             <span style="color: #2970fc;font-size: 14px">免费申请</span></button>
                     </a>
-                    <a style="margin-left: 40px;color: blue" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
+                    <a class="a-a" href="http://www.viologistic.com/" >探索 VioLogistic.com 了解更多 ></a>
                 </div>
             </div>
         </div>
