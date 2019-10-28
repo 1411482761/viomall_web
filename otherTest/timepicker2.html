@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link href="https://cdn.bootcss.com/jquery-datetimepicker/2.5.17/jquery.datetimepicker.min.css" rel="stylesheet">-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<!--    <script src="https://cdn.bootcss.com/jquery-datetimepicker/2.5.17/jquery.datetimepicker.full.min.js"></script>-->
+    <script src="bootstrap/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+</head>
+<body>
+<div class='col-sm-6'>
+<input type="text" id="demo" >
+</div>
+<script>
+    $(function () {
+        let dateMonthConfig = {
+            locale: moment.locale('zh-cn'),
+            format: 'yyyymm', //点击月份后显示在input中的格式
+            autoclose: true, //是否开启自动关闭
+            startView: 'months', //开始视图层，为月视图层
+            maxViewMode:'years', //最大视图层，为年视图层
+            minViewMode:'months', //最小视图层，为月视图层
+            startDate:moment().subtract(11,'month').toDate(), //控制可选的最早月份，为前12个月（含当前月）
+            endDate:moment().toDate() //控制可选的最晚月份，为当前月
+        };
+        $('#demo').datetimepicker(dateMonthConfig);
+//判断动态的时间（date：String 格式：'YYYYMM'）是否为当前月，为当前月取月头日期
+        if(moment(date).isSame(moment().format('YYYYMM'),'month')){
+            $('#demo').datetimepicker('setDate',moment(date+"01").startOf('month').toDate());
+        }
+//不为当前月取月尾日期
+        else{
+            $('#demo').datetimepicker('setDate',moment(date+"01").endOf('month').toDate());
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style>
+
+    .states {
+        fill: #e5e5e5;
+        stroke: #fff;
+        stroke-width:1px;
+    }
+    .cities {
+        fill: red;
+        opacity:0.7;
+
+    }
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script>
+
+    /*var width = 960,
+        height = 500; */
+    var width = 1500,
+        height = 800;
+
+    var svg = d3.select('body').append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    var projection = d3.geo.albersUsa()
+        .scale(1000)
+        .translate([width / 2, height / 2]);
+
+    var path = d3.geo.path()
+        .projection(projection);
+    queue()
+        .defer(d3.json, 'js/states.json')
+        .defer(d3.json, 'js/threeCities.json')
+        .await(makeMyMap);
+
+    function makeMyMap(error, states, cities) {
+        svg.append('path')
+            .datum(topojson.feature(states, states.objects.usStates))
+            .attr('d', path)
+            .attr('class', 'states');
+        var  mydata = [2,3,4,5,6,3,2,1,3,7];
+         var g = svg.selectAll('.cities')
+            .data(cities.features)
+            .enter().append("g");
+             g.append('path')
+            .attr('d', path.pointRadius(10))
+            .attr('class', 'cities')
+             ;
+             g.append("text").text("123").attr("dx","100").attr("y","100").attr("style","bottom:0px");
+  /*      var text = g.selectAll('.myText')
+            .data(cities.features)
+            .enter().append("text")
+            .attr('fill', 'black')
+            .text("123")
+        ;*/
+            /* .append("title")
+            .text(d => "asd")*/
+          //  g.append("text").datum(function()   { return mydata[Math.floor( Math.random()*10)] }).text("2");
+            /*.attr("x","10")
+            .attr("y","10")
+            .attr("style","fill='blue'")
+            .text("asdasds")*/
+        g.append("circle").attr('r',"10").attr("style","fill:'blue';position :'absolute'").attr("transform","translate(30,50)")//.attr("cx","-122.670358102992509").attr("cy","45.523866170473809");
+    }
+</script>
+</body>
+</html>

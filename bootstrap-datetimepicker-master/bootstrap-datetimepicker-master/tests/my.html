@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+ <!--   <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap-datetimepicker.css">
+    <script type="javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type="javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+</head>
+<body>
+<div class="input-append date form_datetime" data-date="2017-04-20T15:25:00Z"  id="form_datetime">
+                <input size="16" type="text" class="input_text" placeholder="采购日期" style="text-align:center">
+                <span class="add-on"><i class="icon-remove"></i></span>
+                <span class="add-on"><i class="icon-calendar"></i></span>
+</div>
+<script>
+    $(function () {
+        $("#form_datetime").datetimepicker({
+            format: "dd MM yyyy - hh:ii",
+            autoclose: true,
+            todayBtn: true,
+            startDate: "2013-02-14 10:00",
+            minuteStep: 10
+        });
+
+    })
+</script>
+</body>
+</html>

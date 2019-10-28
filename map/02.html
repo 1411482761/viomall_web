@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style>
+
+    .states {
+        fill: #e5e5e5;
+        stroke: #fff;
+        stroke-width:1px;
+    }
+    .cities {
+        fill: red;
+        opacity:0.7;
+    }
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script>
+
+    /*var width = 960,
+        height = 500; */
+    var width = 1500,
+        height = 800;
+
+    var svg = d3.select('body').append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    var projection = d3.geo.albersUsa()
+        .scale(1000)
+        .translate([width / 2, height / 2]);
+
+    var path = d3.geo.path()
+        .projection(projection);
+    queue()
+        .defer(d3.json, 'js/states.json')
+        .defer(d3.json, 'js/cities.json')
+        .await(makeMyMap);
+
+    function makeMyMap(error, states, cities) {
+        mydata = {"a":1,"b":2,"c":"3"}
+        svg.append('path')
+            .datum(topojson.feature(states, states.objects.usStates))
+            .attr('d', path)
+            .attr('class', 'states');
+        console.log(svg.selectAll('.cities').data(cities.features))
+        svg.selectAll('.cities')
+            .data(cities.features)
+            .enter().append("g")
+            .append('path')
+            .attr('d', path.pointRadius(10))
+            .attr('class', 'cities')
+            .append("title")
+            .text(d => "asd")
+            /*.attr("x","10")
+            .attr("y","10")
+            .attr("style","fill='blue'")
+            .text("asdasds")*/ ;
+    }
+</script>
+</body>
+</html>

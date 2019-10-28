@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <script type="text/javascript" src="./js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="./js/d3-queue.min.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+    // 定义地图的长宽
+    var width = 960;
+    var height = 500;
+    // 定义地图的容器和样式
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("style", "margin: 20px auto;display: block;")
+        .append("g");
+    // 投影函数
+    // 这个投影函数将美国本土和阿拉斯加以及夏威夷融合在了一个地图上
+    // 它把阿拉斯加的面积缩小0.35倍，将夏威夷岛放在了美国本土的下面
+    var projection = d3.geo.albersUsa();
+    // 设置地理路径生成器
+    // projection() 是设定生成器的投影函数，把上面定义的投影传入即可。
+    // 以后，当使用此生成器计算路径时，会自己加入投影的影响。
+    var path = d3.geo.path()
+        .projection(projection);
+    // 读取数据，生成地图
+    d3.queue()
+        .defer(d3.json, "./dist/us_states.json")
+        .defer(d3.csv, "./dist/us_ag_productivity_2004.csv")
+        .defer(d3.csv, "./dist/us_cities.csv")
+        .await(ready);
+
+    function ready(error, states, productivity, cities) {
+        if (error) throw error;
+        console.log(states);
+        console.log(productivity);
+        console.log(cities);
+        // 根据生产力的不同，返回不同深度的颜色填充地图块
+        var colors = ["#F1E3D6", "#E7C6B0", "#DCAC89", "#C99067", "#BE7542"],
+            proMin = d3.min(productivity, function(d) { return d.value; }),
+            proMax = d3.max(productivity, function(d) { return d.value; });
+        var colorScale = d3.scale.quantile()
+            .domain([proMin, colors.length - 1, proMax])
+            .range(colors);
+        var targetColor = function(target) {
+            for (var i = productivity.length - 1; i >= 0; i--) {
+                if (target == productivity[i].state) {
+                    return colorScale(productivity[i].value);
+                }
+            }
+            return "#F1E3D6";
+        }
+        // 添加地图块
+        svg.selectAll("path")
+            .data(states.features)
+            .enter().append("path")
+        // 添加地图边界
+            .attr("stroke", "#000")
+            .attr("stroke-width", 1)
+            .attr("fill", function(d, i) {
+                return targetColor(d.properties.name);
+            })
+            .attr("d", path)
+            // 鼠标悬浮样式
+            .on("mouseover", function(d, i) {
+                d3.select(this).attr("fill", "yellow");
+            })
+            .on("mouseout", function(d, i) {
+                d3.select(this).attr("fill", targetColor(d.properties.name));
+            })
+            // 添加地图名称
+            .append("title").text(function(d, i) {
+            return d.properties.name;
+        });
+        // 添加人口信息
+        var popMin = d3.min(cities, function(d) { return parseInt(d.population); }),
+            popMax = d3.max(cities, function(d) { return parseInt(d.population); });
+        // 设置比例
+        var getR = d3.scale.linear()
+            .domain([popMin, popMax])
+            .range([4, 24]);
+        var city = svg.selectAll("g")
+            .data(cities).enter()
+            .append("g")
+            // 定位
+            .attr("transform", function(d, i) {
+                var po = projection([d.lon, d.lat]);
+                return "translate(" + po[0] + ", " + po[1] + ")";
+            });
+        city.append("circle")
+            .attr("r", function(d, i) {
+                return getR(cities[i].population);
+            })
+            .attr("fill", "#00a1e9")
+            // 添加透明度，使一些被覆盖的点可以显示出来
+            .attr("opacity", "0.8")
+            // 鼠标悬浮样式
+            .on("mouseover", function(d, i) {
+                d3.select(this).attr("r", getR(d.population) * 2);
+                d3.select(this).attr("fill", "red");
+            })
+            .on("mouseout", function(d, i) {
+                d3.select(this).attr("r", getR(d.population));
+                d3.select(this).attr("fill", "#00a1e9");
+            })
+            // 添加人口信息
+            .append("title").text(function(d, i) {
+            return d.place + "\nPopulations: " + d.population + "\nRank: " + d.rank;
+        });
+
+    }
+</script>
+</body>
+</html>

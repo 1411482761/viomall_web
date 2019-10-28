@@ -1,0 +1,12 @@
+{
+  "type": "FeatureCollection",
+
+  "features": [
+
+    { "type": "Feature", "id": 2, "properties": { "OBJECTID_1": 3, "OBJECTID": 7, "NAME": "Los Angeles", "PLACE_KEY": "0603744000", "CAPITAL": "N", "POPULATION": 3553638, "PCLASS": "8", "STATE": "CA", "STATE_KEY": "06" }, "geometry": { "type": "Point", "coordinates": [ -118.243343585681657, 34.052238218717378 ] } }
+ ,   { "type": "Feature", "id": 3, "properties": { "OBJECTID_1": 3, "OBJECTID": 7, "NAME": "Los Angeles2", "PLACE_KEY": "0603744000", "CAPITAL": "N", "POPULATION": 3553638, "PCLASS": "8", "STATE": "CA", "STATE_KEY": "06" }, "geometry": { "type": "Point", "coordinates": [ -119.243343585681657, 34.052238218717378 ] } }
+,
+    { "type": "Feature", "id": 29, "properties": { "OBJECTID_1": 30, "OBJECTID": 25, "NAME": "New York", "PLACE_KEY": "3606151000", "CAPITAL": "N", "POPULATION": 1533774, "PCLASS": "8", "STATE": "NY", "STATE_KEY": "36" }, "geometry": { "type": "Point", "coordinates": [ -73.986950891738672, 40.75605400737436 ] } }
+
+  ]
+}

@@ -19,6 +19,10 @@
             padding: 0px;
             margin: 0px;
         }
+        .t{
+            font-size: 18px;
+            margin-right: 15px;
+        }
     </style>
 </head>
 <body>
@@ -118,17 +122,21 @@
     </div>
 
 </nav>
-<div >
+<div id ="mv">
     <div id="myCarousel" class="carousel slide h-top" >
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators"  style="visibility:hidden">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner" style="width: 100%;">
             <div class="item active " style="width: 100%">
-                <img src="images/home/h-101.jpg" alt="First slide">
+                <img src="images/home/h-100.jpg" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="images/home/h-101.jpg" alt="Second slide">
             </div>
             <div class="item">
                 <img src="images/home/h-102.jpg" alt="Second slide">
@@ -149,7 +157,7 @@
     </div>
     <div class="row">
         <div class="container h-l2-body" id="title-block" style="margin-top: -55px;z-index: 2;">
-            <a href="#" @click="changeTitle(2)">
+            <a href="./vioMall.html" >
                 <div class="col-md-4 col-xs-4 title-block"
                      style="border: white solid 1px;background-color: #fff;margin-left: -20px;margin-bottom: 30px;box-shadow:0px 5px 3px #cacaca;height: 110px;">
                     <div class="col-md-2 col-xs-2 text-right"><img src="images/home/h-05.png" class="h-l2-logo"/></div>
@@ -162,7 +170,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#" @click="changeTitle(3)">
+            <a href="./vioLogistic.html">
                 <div class="col-md-4 col-xs-4 title-block"
                      style="border: white solid 1px;background-color: #fff;margin-left: 10px;margin-bottom: 30px;box-shadow:0px 5px 3px #cacaca;height: 110px">
                     <div class="col-md-2 col-xs-2 text-right"><img src="images/home/h-06.png" class="h-l2-logo"/></div>
@@ -175,7 +183,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#" @click="changeTitle(4)">
+            <a href="./vioHi.html">
                 <div class="col-md-4 col-xs-4 title-block"
                      style="border: white solid 1px;background-color: #fff;margin-left: 10px;margin-bottom: 30px;box-shadow:0px 5px 3px #cacaca;height: 110px">
                     <div class="col-md-2 col-xs-2 text-right"><img src="images/home/h-07.png"  class="h-l2-logo"/></div>
@@ -224,6 +232,185 @@
     <div class="row" style="margin-top: 100px;">
         <div  class="col-xs-12" style="width: 100%;background-repeat: no-repeat ;"><img src="images/home/city.jpg" width="100%"></div>
     </div>
+
+    <div class="row" style="margin-top: 100px">
+        <div class="col-md-6 text-center" style="margin-top: 75px">
+            <div class="h2" style="font-weight: 600">累计完成 300000000 人民币销售额 </div>
+            <div class="h3" style="color: grey">利用现成可用的解决方案，助力跨境销售 </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <iframe id="activeModel" src="http://dms.viomall.com/ad3.do" style="width: 100%;height: 300px"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" > </iframe>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 100px">
+        <div class="col-md-10 col-md-push-1 h2" style="font-weight: 600">VIOMALL动态服务</div>
+        <div class="col-md-push-1 col-md-10" style="margin-top: 50px">
+            <div class="col-md-4">
+                <div class="col-md-11"><img src="./images/home/factory-delang.png" style="width: 100%;"/></div>
+                <div class="col-md-11 text-left" style="margin-top: 25px;height:60px;font-size: 20px;line-height: 30px;color: rgba(16, 16, 16, 1)"> 微茂 VIOMALL 与 德朗DELANG 散热器公司达成深度合作</div>
+                <div class="col-md-11 text-left" style="margin-top: 10px">2019-07-26</div>
+                <div class="col-md-11 text-left " style="margin-top: 10px">2019年07月25日上午，微茂 VIOMALL 与国内知名OE渠道制造商，德朗DELANG 签署了国际业务战略合作协议，针对汽车散热器市场公司 开展战略合作…
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-11"><img src="./images/home/factory-reach.png" style="width: 100%;"/></div>
+                <div class="col-md-11 text-left" style="margin-top: 25px;height:60px;font-size: 20px;line-height: 30px;color: rgba(16, 16, 16, 1)"> 微茂 VIOMALL 与 Reach 散热器公司达成深度合作</div>
+                <div class="col-md-11 text-left" style="margin-top: 10px">2019-08-06</div>
+                <div class="col-md-11 text-left " style="margin-top: 10px">2019年08月06日上午，微茂 VIOMALL 与著名汽车散热器制造公司 Reach 签署了国际业务战略合作协议，共同开展散热器、冷凝器的美国市场开发…
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-11"><img src="./images/home/factory-songtian.png " style="width: 100%;"/></div>
+                <div class="col-md-11 text-left" style="margin-top: 25px;height:60px;font-size: 20px;line-height: 30px;color: rgba(16, 16, 16, 1)"> 微茂 VIOMALL 与 松田SHOWSEN 电机公司达成深度合作</div>
+                <div class="col-md-11 text-left" style="margin-top: 10px">2019-09-26</div>
+                <div class="col-md-11 text-left " style="margin-top: 10px">2019年09月26日上午，微茂 VIOMALL 与国内著名汽车电机制造企业松田SHOWSEN展开深度合作，开展面向跨境电商分销商的市场拓展活动…
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 100px">
+        <div class="col-md-1 col-xs-1"></div>
+        <div class="col-md-10">
+            <div class="col-md-5 col-xs-5"  style="margin-top: 30px">
+                <div class="text-left  h1 " style="font-size: 48px;font-weight: bold">值得信赖的服务</div>
+                <div class="text-left h1" style="font-size: 48px;font-weight: bold">这些品牌都在使用 VIOMALL</div>
+            </div>
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-5 col-xs-5 h-pic-6" ><img src="./images/home/gys.png" width="100%"></div>
+        </div>
+
+
+    </div>
+    <div class="row" style="margin-top: 70px">
+        <div class="col-md-1 col-xs-1"></div>
+        <div class="col-md-10">
+            <div class="col-md-5 col-xs-5" style="margin-top: 20px">
+                <div class="text-left h3">Customer Reviews</div>
+                <div class="text-left col-md-12 col-xs-12" style="background-color: #ebeff7;">
+                    <div class="review-block">
+                        VIOMALL平台其专业、敬业的服务给我们留下了深刻的印象，是值得长期合作的伙伴！在整体的运营和策划中把控度较高，了解互联网的发展模式，可以为公司产品带来良好的点击率及关注度。
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 30px">
+                    <div class="col-md-5 col-xs-0"></div>
+                    <div class="col-md-2 col-xs-2 text-right" style="margin-top: 20px"><!--<hr style="width: 100px;"/>--></div>
+                    <div class="col-md-5 col-xs-10 text-right" style="margin-top: 20px">北山品牌CEO Mr.史</div>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-5 col-xs-5" style="margin-top: 20px">
+                <div class="text-left h3">Customer Reviews</div>
+                <div class="text-left col-md-12 col-xs-12" style="background-color: #ebeff7;">
+                    <div class="review-block" >
+                        VIOMALL网非常热情，有活动或者多方面提议都会跟我联系，提出优化方案，已达到我们所需要的效果。活动流程清晰，对接人配合度高，态度好，推广方式多，力度大，时间节点把控恰到好处，为公司形象建立了良性循环。愿VIOMALL平台发展更远更庞大。
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 30px">
+                    <div class="col-md-5 col-xs-0"></div>
+                    <div class="col-md-2 col-xs-2 text-right" style="margin-top: 20px"><!--<hr style="width: 100px;"/>--></div>
+                    <div class="col-md-5 col-xs-10 text-right" style="margin-top: 20px">知名汽配企业CEO Mr.李</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-top: 100px;">
+            <div class="col-md-1"></div>
+            <div class="col-md-6  " style="height: 50px">
+                <span class="h2" style="margin-right: 40px;font-weight: 600;">VIOMALL赋能培训</span>
+                <span id="title1" class="t" @click="changeTitle(1)">全部</span>
+                <span id="title2" class="t" @click="changeTitle(2)">运营</span>
+                <span id="title3" class="t" @click="changeTitle(3)"> 产品</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 40px;" >
+        <div class="col-md-10 col-md-push-1" v-show="title==1">
+            <div class="col-md-3  text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019df066ae6d0ffba32814ef16_0'></iframe>
+                <div class="h4 text-left">viomall_amazon&ebay账户安全监测</div>
+                <div class="text-left">2019-09-19</div>
+            </div>
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d583e10d257511d809d92f2_0'></iframe>
+                <div class="h4 text-left">viomall专项产品之车盖</div>
+                <div class="text-left">2019-09-19</div>
+            </div>
+                <div class="col-md-3 text-left">
+                    <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                            src='http://share.polyv.net/front/video/preview?vid=003d19019d5fcf3bdc66a4cb3cafc45f_0'></iframe>
+                    <div class="h4 text-left">viomall_amazon汽配专场</div>
+                    <div class="text-left">2019-09-25</div>
+                </div>
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d65fa0f5cfb28cb9d27190f_0'></iframe>
+                <div class="h4 text-left">viomall专项产品之Window Regulator</div>
+                <div class="text-left">2019-09-26</div>
+            </div>
+
+            <div class="row" v-if="all">
+                <div class="col-md-4 col-md-push-4" style="margin-top: 50px">
+                    <input type="button" class="form-control" value="查看更多..." @click="changeAllShow()">
+                </div>
+            </div>
+            <div class="row" v-if="!all">
+                <div class="col-md-3 text-left">
+                    <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                            src='http://share.polyv.net/front/video/preview?vid=003d19019d5ce13acefb734394126051_0'></iframe>
+                    <div class="h4 text-left">viomall汽配PS小课堂</div>
+                    <div class="text-left">2019-09-27</div>
+                </div>
+                <div class="col-md-9"></div>
+            </div>
+            <div class="row" v-if="!all">
+                <div class="col-md-4 col-md-push-4" style="margin-top: 50px">
+                    <input type="button" class="form-control" value="收起" @click="changeAllShow()">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-push-1" v-show="title==2">
+            <div class="col-md-3  text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019df066ae6d0ffba32814ef16_0'></iframe>
+            <div class="h4 text-left">viomall_amazon&ebay账户安全监测</div>
+            <div class="text-left">2019-09-19</div>
+        </div>
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d5fcf3bdc66a4cb3cafc45f_0'></iframe>
+                <div class="h4 text-left">viomall_amazon汽配专场</div>
+                <div class="text-left">2019-09-25</div>
+            </div>
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d5ce13acefb734394126051_0'></iframe>
+                <div class="h4 text-left">viomall汽配PS小课堂</div>
+                <div class="text-left">2019-09-27</div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-push-1" v-show="title==3">
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d583e10d257511d809d92f2_0'></iframe>
+                <div class="h4 text-left">viomall专项产品之车盖</div>
+                <div class="text-left">2019-09-19</div>
+            </div>
+            <div class="col-md-3 text-left">
+                <iframe style='width: 320px;height: 180px' frameborder='no' allowfullscreen mozallowfullscreen webkitallowfullscreen
+                        src='http://share.polyv.net/front/video/preview?vid=003d19019d65fa0f5cfb28cb9d27190f_0'></iframe>
+                <div class="h4 text-left">viomall专项产品之Window Regulator</div>
+                <div class="text-left">2019-09-26</div>
+            </div>
+        </div>
+    </div>
+
     <div class="row" style="margin-top: 100px">
         <div class="col-md-12 col-xs-12 text-center h-title-4" >
             简单3个步骤打造你的跨境业务
@@ -382,45 +569,7 @@
 
         </div>
     </div>
-    <div class="row" style="margin-top: 100px">
-        <div class="col-md-2 col-xs-2"></div>
-        <div class="col-md-4 col-xs-4" >
-            <div class="text-left  h1 " style="font-size: 2em;font-weight: bold">值得信赖的服务</div>
-            <div class="text-left h1" style="font-size: 2em;font-weight: bold">这些品牌都在使用 VIOMALL</div>
-        </div>
-        <div class="col-md-1 col-xs-1"></div>
-        <div class="col-md-4 col-xs-4 h-pic-6" ><img src="images/temp/fx-line-6.jpg" width="100%"></div>
-    </div>
-    <div class="row" style="margin-top: 70px">
-        <div class="col-md-2 col-xs-2"></div>
-        <div class="col-md-4 col-xs-4" style="margin-top: 20px">
-            <div class="text-left h3">Customer Reviews</div>
-            <div class="text-left col-md-12 col-xs-12" style="background-color: #ebeff7;">
-                <div class="review-block">
-                    VIOMALL平台其专业、敬业的服务给我们留下了深刻的印象，是值得长期合作的伙伴！在整体的运营和策划中把控度较高，了解互联网的发展模式，可以为公司产品带来良好的点击率及关注度。
-                </div>
-            </div>
-            <div class="row" style="margin-top: 30px">
-                <div class="col-md-5 col-xs-0"></div>
-                <div class="col-md-2 col-xs-2 text-right" style="margin-top: 20px"><!--<hr style="width: 100px;"/>--></div>
-                <div class="col-md-5 col-xs-10 text-right" style="margin-top: 20px">北山品牌CEO Mr.史</div>
-            </div>
-        </div>
-        <div class="col-md-1 col-xs-1"></div>
-        <div class="col-md-4 col-xs-4" style="margin-top: 20px">
-            <div class="text-left h3">Customer Reviews</div>
-            <div class="text-left col-md-12 col-xs-12" style="background-color: #ebeff7;">
-                <div class="review-block" >
-                    VIOMALL网非常热情，有活动或者多方面提议都会跟我联系，提出优化方案，已达到我们所需要的效果。活动流程清晰，对接人配合度高，态度好，推广方式多，力度大，时间节点把控恰到好处，为公司形象建立了良性循环。愿VIOMALL平台发展更远更庞大。
-                </div>
-            </div>
-            <div class="row" style="margin-top: 30px">
-                <div class="col-md-5 col-xs-0"></div>
-                <div class="col-md-2 col-xs-2 text-right" style="margin-top: 20px"><!--<hr style="width: 100px;"/>--></div>
-                <div class="col-md-5 col-xs-10 text-right" style="margin-top: 20px">知名汽配企业CEO Mr.李</div>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div class="row" style="margin-top: 20px">
     <div style="width: 100%;height: 300px;background-color: #006eff" class="col-md-12 col-xs-12 text-center">
@@ -479,5 +628,42 @@
         </div>
     </div>
 </div>
+<script>
+    var myVue= new Vue({
+        el:"#mv",
+        data:{
+            title:1,
+             all:true,
+             run:true,
+             product:true
+        },
+        methods:{
+            changeTitle:function (t) {
+                this.title=t;
+                $("#title1").removeAttr("style");
+                $("#title2").removeAttr("style");
+                $("#title3").removeAttr("style");
+                if (t==2){
+                    $("#title2").attr("style","border-bottom: blue solid 2px;padding-bottom: 5px;color: blue");
+                }else if(t==3){
+                    $("#title3").attr("style","border-bottom: blue solid 2px;padding-bottom: 5px;color: blue");
+                }else{
+                    $("#title1").attr("style","border-bottom: blue solid 2px;padding-bottom: 5px;color: blue");
+                }
+            },
+            changeAllShow:function () {
+                this.all=!this.all;
+                var t_all=this.all;
+                if(t_all){
+
+                }
+            }
+        }
+    });
+    $(function () {
+        $("#title1").attr("style","border-bottom: blue solid 2px;padding-bottom: 5px;color: blue");
+    });
+
+</script>
 </body>
 </html>
